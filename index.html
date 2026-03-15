@@ -17,7 +17,7 @@
     <canvas id="bg-canvas"></canvas>
 
     <nav>
-        <h1>Sanithu Ruwanpathirana</h1>
+        <h1>Sanithu.</h1>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -32,6 +32,12 @@
             <h1>Hi, I'm <span>Sanithu</span></h1>
             <p>Software Engineer | IT Technician | Network Specialist</p>
             <p class="subtitle">Building robust software solutions and managing solid IT infrastructure.</p>
+            
+            <div style="margin-top: 35px;">
+                <a href="S.Ruwanpathirana's Professional Resume.pdf" download class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 12px 35px; background: rgba(0, 255, 136, 0.1);">
+                    Download CV <i class="fas fa-file-download" style="margin-left: 10px;"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -106,7 +112,7 @@
                 <div class="contact-details">
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sanithu.dev@example.com</span>
+                        <a href="mailto:sanithuruwanpathirana0@gmail.com" style="color: var(--text-gray); text-decoration: none;">sanithuruwanpathirana0@gmail.com</a>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
@@ -119,22 +125,26 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sanithu-ruwanpathirana-82840131a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Sanithu16684" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://wa.me/94743027842" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
             <div class="contact-form-box card reveal">
-                <form onsubmit="event.preventDefault(); alert('Message sending feature will be connected soon!');">
+                <form action="https://formsubmit.co/sanithuruwanpathirana0@gmail.com" method="POST">
+                    
+                    <input type="hidden" name="_subject" value="New Message from Portfolio!">
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="input-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="input-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="input-group">
-                        <textarea placeholder="Your Message..." rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">
                         Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
