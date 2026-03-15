@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanithu | Software Engineer & IT Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p style="margin-top: 15px; color: #00ff88; letter-spacing: 2px;">INITIALIZING 3D ENVIRONMENT...</p>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav>
+        <h1>Sanithu Ruwanpathirana</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Sanithu</span></h1>
+            <p>Software Engineer | IT Technician | Network Specialist</p>
+            <p class="subtitle">Building robust software solutions and managing solid IT infrastructure.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <img src="my_profile.jpeg" alt="Sanithu" class="profile-img">
+            <div class="about-text">
+                <p>Hello! I am Sanithu, a passionate technology enthusiast with a deep focus on Software Engineering, Data Analysis, and AI Automation. My strength lies in my practical, hands-on knowledge gained through building real-world projects.</p>
+                <p>Beyond software development, I am highly skilled on the hardware and infrastructure side. I have extensive experience as an IT technician, handling computer repairing, networking, and hardware troubleshooting. This dual knowledge of both code and hardware allows me to understand systems from the ground up and build highly efficient, optimized solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects & Achievements</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>🏆 1st Place - Sona PHP Hackathon (2023)</h3>
+                <p><strong>Project:</strong> Distance Service Management System (LocalLink)</p>
+                <p>Developed an award-winning web solution showcasing strong problem-solving and web development capabilities.</p>
+            </div>
+            <div class="card">
+                <h3>🏆 2nd Place - IOT Hackathon (2025)</h3>
+                <p><strong>Project:</strong> SpiderWick (SpiderRobot)</p>
+                <p>Engineered an impressive IoT robotics project, blending hardware networking with software programming.</p>
+            </div>
+            <div class="card">
+                <h3>🎮 Online Game Store</h3>
+                <p>A comprehensive e-commerce platform dedicated to digital game distribution.</p>
+                <div class="tech-tags">
+                    <span>Software Engineering</span>
+                    <span>Full-stack</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>👥 Employee Database CRUD App</h3>
+                <p>A robust application built for managing employee records efficiently.</p>
+                <div class="tech-tags">
+                    <span>Java</span>
+                    <span>Jersey MVC</span>
+                    <span>Hibernate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-btn">Java</div>
+            <div class="skill-btn">JavaScript</div>
+            <div class="skill-btn">Python</div>
+            <div class="skill-btn">Hibernate</div>
+            <div class="skill-btn">Jersey MVC</div>
+            <div class="skill-btn">AI Automation</div>
+            <div class="skill-btn">Data Analysis</div>
+            <div class="skill-btn">Computer Repairing</div>
+            <div class="skill-btn">Networking</div>
+            <div class="skill-btn">IT Technician</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-wrapper">
+            
+            <div class="contact-info-box card reveal">
+                <h3>Let's Connect</h3>
+                <p>I am currently open for new opportunities, freelance projects, and exciting collaborations. Feel free to reach out!</p>
+                
+                <div class="contact-details">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sanithu.dev@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+94 7X XXX XXXX</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Piliyandala, Sri Lanka</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form-box card reveal">
+                <form onsubmit="event.preventDefault(); alert('Message sending feature will be connected soon!');">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea placeholder="Your Message..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
