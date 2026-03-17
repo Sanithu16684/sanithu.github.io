@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanithu | Software Engineer & IT Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-trail"></div>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p style="margin-top: 15px; color: #00ff88; letter-spacing: 2px;">Loading ...</p>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav>
+        <h1>Sanithu Ruwanpathirana</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-container reveal-elem">
+            <!-- Animated Glowing Border Wrapper -->
+            <div class="glow-border"></div>
+            
+            <div class="hero-content">
+                <span class="eyebrow" style="transition-delay: 0.1s;">— Welcome to my universe</span>
+                <h1 class="main-title reveal-elem" style="transition-delay: 0.2s;">Hi, I'm <span class="highlight">Sanithu</span></h1>
+                
+                <div class="typing-wrapper reveal-elem" style="transition-delay: 0.4s;">
+                    <p class="typing-container"><span id="typed-text"></span><span class="cursor">&nbsp;</span></p>
+                </div>
+                
+                <p class="subtitle reveal-elem" style="transition-delay: 0.6s;">
+                    Building robust software solutions and managing solid IT infrastructure with a passion for emerging technologies.
+                </p>
+                
+                <div class="btn-group reveal-elem" style="transition-delay: 0.8s;">
+                    <a href="S.Ruwanpathirana's Professional Resume.pdf" download class="btn-primary">
+                        Download CV <i class="fas fa-file-download"></i>
+                    </a>
+                    <a href="#projects" class="btn-secondary">
+                        View Work <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title reveal-elem">About Me</h2>
+        <div class="about-content reveal-elem" style="transition-delay: 0.2s;">
+            <div class="about-image-wrapper">
+                <div class="glow-border-img"></div>
+                <img src="my_profile.jpeg" alt="Sanithu" class="profile-img">
+            </div>
+            
+            <div class="about-text">
+                <h3 class="about-subtitle">Bridging the gap between <span>Software Engineering</span> and <span>Hardware Infrastructure</span>.</h3>
+                
+                <p>Hello! I am Sanithu, a passionate technology enthusiast with a deep focus on Software Engineering, Data Analysis, and AI Automation. My strength lies in my practical, hands-on knowledge gained through building real-world projects.</p>
+                <p>Beyond software development, I am highly skilled on the hardware and infrastructure side. I have extensive experience as an IT technician, handling computer repairing, networking, and hardware troubleshooting. This dual knowledge of both code and hardware allows me to understand systems from the ground up and build highly efficient, optimized solutions.</p>
+                
+                <!-- Detailed Stats Block -->
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years of<br>Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Projects<br>Completed</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client<br>Satisfaction</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title reveal-elem">Recent Activities & Projects</h2>
+        <div class="next-level-grid">
+            
+            <div class="activity-card reveal-elem">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="PHP Hackathon" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">🏆 1st Place</span>
+                    <h3>Sona PHP Hackathon (2023)</h3>
+                    <p class="activity-desc">Distance Service Management System (LocalLink). Developed an award-winning web solution showcasing strong problem-solving and web development capabilities.</p>
+                    <div class="tech-tags">
+                        <span>PHP</span><span>Web Dev</span><span>Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card reveal-elem" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IOT Hackathon" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">🏆 2nd Place</span>
+                    <h3>IOT Hackathon (2025)</h3>
+                    <p class="activity-desc">SpiderWick (SpiderRobot). Engineered an impressive IoT robotics project, blending hardware networking with software programming.</p>
+                    <div class="tech-tags">
+                        <span>IoT</span><span>Robotics</span><span>Hardware</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card reveal-elem" style="transition-delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Game Store" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">Featured Project</span>
+                        <h3>Online Game Store</h3>
+                    
+                    <p class="activity-desc">A comprehensive e-commerce platform dedicated to digital game distribution.</p>
+                    <div class="tech-tags">
+                        <span>Software Engineering</span><span>Full-stack</span><span>Java</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card reveal-elem" style="transition-delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Employee Database" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">Enterprise App</span>
+                    <h3>Employee Database CRUD</h3>
+                    <p class="activity-desc">A robust application built for managing employee records efficiently with a clean MVC architecture.</p>
+                    <div class="tech-tags">
+                        <span>Java</span><span>Jersey MVC</span><span>Hibernate</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title reveal-elem">Technical Expertise</h2>
+        
+        <div class="skills-grid">
+            
+            <!-- Software Category -->
+            <div class="skill-category reveal-elem">
+                <div class="category-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Software Engineering</h3>
+                </div>
+                <div class="skills-container-detailed">
+                    <div class="skill-btn-detailed">Java</div>
+                    <div class="skill-btn-detailed">JavaScript</div>
+                    <div class="skill-btn-detailed">Python</div>
+                    <div class="skill-btn-detailed">Hibernate</div>
+                    <div class="skill-btn-detailed">Jersey MVC</div>
+                </div>
+            </div>
+
+            <!-- Hardware & Network Category -->
+            <div class="skill-category reveal-elem" style="transition-delay: 0.2s;">
+                <div class="category-header">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>IT & Infrastructure</h3>
+                </div>
+                <div class="skills-container-detailed">
+                    <div class="skill-btn-detailed">Networking</div>
+                    <div class="skill-btn-detailed">Computer Repairing</div>
+                    <div class="skill-btn-detailed">IT Technician Support</div>
+                    <div class="skill-btn-detailed">Hardware Diagnostics</div>
+                </div>
+            </div>
+
+            <!-- Advanced Category -->
+            <div class="skill-category reveal-elem" style="transition-delay: 0.4s;">
+                <div class="category-header">
+                    <i class="fas fa-brain"></i>
+                    <h3>Data & Automation</h3>
+                </div>
+                <div class="skills-container-detailed">
+                    <div class="skill-btn-detailed">AI Automation</div>
+                    <div class="skill-btn-detailed">Data Analysis</div>
+                    <div class="skill-btn-detailed">IoT Robotics</div>
+                </div>
+            </div>
+
+            <!-- Cloud Category -->
+            <div class="skill-category reveal-elem" style="transition-delay: 0.6s;">
+                <div class="category-header">
+                    <i class="fab fa-aws"></i>
+                    <h3>Cloud & DevOps</h3>
+                </div>
+                <div class="skills-container-detailed">
+                    <div class="skill-btn-detailed">AWS Core Services</div>
+                    <div class="skill-btn-detailed">Cloud Deployment</div>
+                    <div class="skill-btn-detailed">Server Management</div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title reveal-elem">Get In Touch</h2>
+        <div class="contact-wrapper">
+            
+            <div class="contact-info-box card reveal">
+                <h3>Let's Connect</h3>
+                <p>I am currently open for new opportunities, freelance projects, and exciting collaborations. Feel free to reach out!</p>
+                
+                <div class="contact-details">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sanithuruwanpathirana0@gmail.com" style="color: var(--text-gray); text-decoration: none;">sanithuruwanpathirana0@gmail.com</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+94 74 302 7842</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Piliyandala, Sri Lanka</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sanithu-ruwanpathirana-82840131a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Sanithu16684" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://wa.me/94743027842" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form-box card reveal">
+                <form action="https://formsubmit.co/sanithuruwanpathirana0@gmail.com" method="POST">
+                    
+                    <input type="hidden" name="_subject" value="New Message from Portfolio!">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="input-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Add GLTFLoader for 3D Avatars -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
