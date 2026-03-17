@@ -9,6 +9,32 @@ window.addEventListener('load', () => {
     }, 1000);
 });
 
+// Configure Lenis Smooth Scrolling
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+    direction: 'vertical', // vertical, horizontal
+    gestureDirection: 'vertical', // vertical, horizontal, both
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+});
+
+// Get scroll value
+lenis.on('scroll', (e) => {
+    scrollY = window.scrollY;
+    handleCardReveal();
+    
+    // Scroll Progress Bar Update
+    if (progressBar) {
+        const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
+        const progressPercent = (scrollY / scrollMax) * 100;
+        progressBar.style.width = progressPercent + '%';
+    }
+});
+
 // Three.js Setup
 const canvas = document.getElementById('bg-canvas');
 const scene = new THREE.Scene();
@@ -33,16 +59,21 @@ const material = new THREE.PointsMaterial( { color: 0x00ff88, size: 0.25, transp
 const particles = new THREE.Points( geometry, material );
 scene.add( particles );
 
+// --- SCENE LIGHTING ---
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+dirLight.position.set(5, 10, 7);
+scene.add(dirLight);
+const dirLight2 = new THREE.DirectionalLight(0x00ff88, 0.5); // Neon green accent
+dirLight2.position.set(-5, 5, -5);
+scene.add(dirLight2);
+
 // --- SECTION SPECIFIC BACKGROUNDS ---
 
-// 1. HOME: Big Abstract Tech Shape
-const homeObjects = new THREE.Group();
-const heroGeom = new THREE.TorusKnotGeometry( 15, 3, 100, 16 ); 
-const heroMat = new THREE.MeshBasicMaterial( { color: 0x00ff88, wireframe: true, transparent: true, opacity: 0.15 } );
-const heroMesh = new THREE.Mesh( heroGeom, heroMat );
-heroMesh.position.set(0, 0, -30); 
-homeObjects.add(heroMesh);
-scene.add(homeObjects);
+// --- SECTION SPECIFIC BACKGROUNDS ---
+
+// (Landing Section 3D Object removed per request - relying on global particles and UI for visuals)
 
 // 2. ABOUT: Hardware floating objects 
 const aboutObjects = new THREE.Group();
@@ -122,23 +153,94 @@ scene.add(floorGrid);
 
 camera.position.z = 10; 
 
-// SCROLL TRACKING LOGIC
+// SCROLL TRACKING LOGIC (Handled by Lenis now, keeping for initial state)
 let scrollY = window.scrollY;
-window.addEventListener('scroll', () => {
-    scrollY = window.scrollY;
-    handleCardReveal();
-});
 
-// Mouse Tracking
+// Mouse Tracking & Custom Cursor Logic
 let mouseX = 0, mouseY = 0;
+let cursorX = window.innerWidth / 2, cursorY = window.innerHeight / 2;
+const customCursor = document.querySelector('.custom-cursor');
+const customCursorTrail = document.querySelector('.custom-cursor-trail');
+const progressBar = document.getElementById('scroll-progress');
+
 document.addEventListener('mousemove', (event) => {
+    // For 3D camera parallax
     mouseX = (event.clientX - window.innerWidth / 2) * 0.005;
     mouseY = (event.clientY - window.innerHeight / 2) * 0.005;
+    
+    // For Custom Cursor immediate pos
+    cursorX = event.clientX;
+    cursorY = event.clientY;
+    
+    if (customCursor) {
+        customCursor.style.left = cursorX + 'px';
+        customCursor.style.top = cursorY + 'px';
+    }
 });
+
+// Cursor trail smooth animation
+let trailX = window.innerWidth / 2, trailY = window.innerHeight / 2;
+function animateCursorTrail() {
+    if (customCursorTrail) {
+        trailX += (cursorX - trailX) * 0.15; // Smoothness factor
+        trailY += (cursorY - trailY) * 0.15;
+        customCursorTrail.style.left = trailX + 'px';
+        customCursorTrail.style.top = trailY + 'px';
+    }
+    requestAnimationFrame(animateCursorTrail);
+}
+animateCursorTrail();
+
+// Cursor Interaction on Hover Elements
+const hoverElements = document.querySelectorAll('a, button, .activity-card, .btn-primary, .btn-secondary, .social-links a, .skill-btn-detailed, input, textarea');
+hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        if(customCursorTrail) customCursorTrail.classList.add('hovered');
+        if(customCursor) customCursor.classList.add('hovered');
+    });
+    el.addEventListener('mouseleave', () => {
+        if(customCursorTrail) customCursorTrail.classList.remove('hovered');
+        if(customCursor) customCursor.classList.remove('hovered');
+    });
+});
+
+// TYPING EFFECT
+const words = ["Software Engineer", "IT Technician", "Network Specialist"];
+let currentWordIndex = 0;
+let currentCharIndex = 0;
+let isDeleting = false;
+let typedTextElement = document.getElementById('typed-text');
+
+function typeEffect() {
+    if(!typedTextElement) return;
+    const currentWord = words[currentWordIndex];
+    if (isDeleting) {
+        typedTextElement.textContent = currentWord.substring(0, currentCharIndex - 1);
+        currentCharIndex--;
+    } else {
+        typedTextElement.textContent = currentWord.substring(0, currentCharIndex + 1);
+        currentCharIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && currentCharIndex === currentWord.length) {
+        typeSpeed = 1500; // Pause at end of word
+        isDeleting = true;
+    } else if (isDeleting && currentCharIndex === 0) {
+        isDeleting = false;
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+        typeSpeed = 400; // Pause before next word
+    }
+    setTimeout(typeEffect, typeSpeed);
+}
+if(typedTextElement) {
+    setTimeout(typeEffect, 1200); // Start typing slightly after load
+}
 
 // CARD REVEAL ON SCROLL LOGIC
 function handleCardReveal() {
-    const cards = document.querySelectorAll('.card, .skill-btn');
+    const cards = document.querySelectorAll('.card, .skill-btn, .reveal-elem');
     const windowHeight = window.innerHeight;
 
     cards.forEach(card => {
@@ -150,7 +252,8 @@ function handleCardReveal() {
 }
 
 // ANIMATION LOOP
-function animate() {
+function animate(time) {
+    lenis.raf(time); // Integrate Lenis into existing requestAnimationFrame
     requestAnimationFrame(animate);
     
     const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
@@ -164,9 +267,8 @@ function animate() {
     // Particles global animation
     particles.rotation.y += 0.0008; 
 
-    // Section Animations
-    heroMesh.rotation.x += 0.001;
-    heroMesh.rotation.y += 0.002;
+    // Global Particle Field
+    particles.rotation.y += 0.0008; 
     
     aboutObjects.children.forEach(obj => {
         obj.rotation.x += 0.002;
