@@ -17,6 +17,7 @@
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     <div class="custom-cursor-trail"></div>
+    <canvas id="cursor-canvas"></canvas>
 
     <div id="loader">
         <div class="spinner"></div>
@@ -25,14 +26,25 @@
 
     <canvas id="bg-canvas"></canvas>
 
-    <nav>
-        <h1>Sanithu Ruwanpathirana</h1>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <nav id="navbar">
+        <a href="#home" class="nav-logo">
+            <h1>Sanithu<span class="highlight">.</span></h1>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#leadership" class="nav-link">Leadership</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
@@ -99,55 +111,259 @@
         </div>
     </section>
 
+    <section id="experience">
+        <h2 class="section-title reveal-elem">Work Experience</h2>
+        <p class="section-subtitle reveal-elem">Demonstrated history of enterprise software engineering, database optimization, and hands-on IT infrastructure solutions.</p>
+        
+        <div class="experience-timeline reveal-elem">
+            
+            <!-- Experience 1: CIC Holdings PLC -->
+            <div class="experience-card reveal-elem" style="transition-delay: 0.1s;">
+                <div class="experience-dot"></div>
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Software Engineer Intern</h3>
+                        <div class="experience-company">
+                            <i class="fas fa-building"></i>
+                            <span>CIC Holdings PLC</span>
+                        </div>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-badge">Enterprise Engineering</span>
+                        <span class="experience-date"><i class="far fa-calendar-alt"></i> May 2026 - Present</span>
+                    </div>
+                </div>
+                
+                <p class="experience-summary">
+                    Contributing to core internal system optimization initiatives, enterprise database management, and robust backend microservices integration.
+                </p>
+                
+                <ul class="experience-bullets">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Contributed to internal system optimization project, focusing on database management and backend integration using <strong>ASP.NET Core</strong> and <strong>Entity Framework</strong>.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Supported the development lifecycle by actively participating in agile code reviews, sprint planning, and documenting comprehensive technical requirements.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Streamlined complex data migration processes using customized SQL scripts, reducing manual processing time for legacy systems by <strong>20%</strong>.</span>
+                    </li>
+                </ul>
+                
+                <div class="experience-tags">
+                    <span>ASP.NET Core</span>
+                    <span>C#</span>
+                    <span>Entity Framework</span>
+                    <span>SQL Server</span>
+                    <span>Database Migration</span>
+                    <span>Code Reviews</span>
+                    <span>SDLC</span>
+                </div>
+            </div>
+
+            <!-- Experience 2: Computer Technician -->
+            <div class="experience-card reveal-elem" style="transition-delay: 0.25s;">
+                <div class="experience-dot"></div>
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Computer Technician</h3>
+                        <div class="experience-company">
+                            <i class="fas fa-server"></i>
+                            <span>IT & Infrastructure Services (Western Province)</span>
+                        </div>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-badge">IT Infrastructure</span>
+                        <span class="experience-date"><i class="far fa-calendar-alt"></i> Jan 2024 - Jan 2026</span>
+                    </div>
+                </div>
+                
+                <p class="experience-summary">
+                    Delivered hands-on IT support, hardware maintenance, network configuration, and systems deployment across the Western Province.
+                </p>
+                
+                <ul class="experience-bullets">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Provided hands-on IT support, hardware repair, and system configuration across Western Province; diagnosed and resolved complex hardware and software issues, performed OS installations, and maintained workstations.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Installed and maintained enterprise routers, network switches, and local networks (LANs) to ensure stable connectivity and improved system uptime.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Maintained asset inventory, performed preventative maintenance schedules, and managed secure backups to minimize system downtime.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Supported development and deployment environments by assisting with secure environment setup, security baselines, and routine maintenance.</span>
+                    </li>
+                </ul>
+                
+                <div class="experience-tags">
+                    <span>Hardware Diagnostics</span>
+                    <span>Network Configuration</span>
+                    <span>Routers & Switches</span>
+                    <span>Workstation Setup</span>
+                    <span>OS Deployment</span>
+                    <span>Data Backups</span>
+                    <span>Preventive Maintenance</span>
+                </div>
+            </div>
+
+            <!-- Experience 3: Freelance Software Engineer -->
+            <div class="experience-card reveal-elem" style="transition-delay: 0.4s;">
+                <div class="experience-dot"></div>
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Freelance Software Engineer</h3>
+                        <div class="experience-company">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Independent Solutions</span>
+                        </div>
+                    </div>
+                    <div class="experience-meta">
+                        <span class="experience-badge">Full-Stack & Mobile</span>
+                        <span class="experience-date"><i class="far fa-calendar-alt"></i> 2024 - Present</span>
+                    </div>
+                </div>
+                
+                <p class="experience-summary">
+                    Architecting and engineering tailored web platforms, cross-platform mobile applications, and AI automation tools for diverse business clients.
+                </p>
+                
+                <ul class="experience-bullets">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Delivering modern, responsive web applications utilizing <strong>React</strong>, <strong>Node.js</strong>, and RESTful architectures.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Developing cross-platform mobile solutions using <strong>Flutter</strong> and <strong>Dart</strong>, delivering responsive UI/UX and native performance.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Designing AI-driven automation workflows and intelligent scripts that streamline business operations and improve productivity.</span>
+                    </li>
+                </ul>
+                
+                <div class="experience-tags">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Flutter</span>
+                    <span>Dart</span>
+                    <span>AI Automation</span>
+                    <span>REST APIs</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="projects">
-        <h2 class="section-title reveal-elem">Recent Activities & Projects</h2>
+        <h2 class="section-title reveal-elem">Featured Projects & Innovations</h2>
+        <p class="section-subtitle reveal-elem">Enterprise systems, full-stack web applications, e-commerce platforms, and award-winning hackathon solutions.</p>
+        
         <div class="next-level-grid">
             
+            <!-- Project 1: Medical Rep Mobile Application CIC Holdings -->
             <div class="activity-card reveal-elem">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Medical Rep System" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">Enterprise ASP.NET</span>
+                    <div class="activity-company"><i class="fas fa-hospital"></i> CIC Holdings PLC</div>
+                    <h3>Medical Rep Management System</h3>
+                    <p class="activity-desc">Web-based management system developed in ASP.NET and C# to streamline medical representatives' field operations. Contributed to daily task creation, promotion event tracking with an interactive event calendar, doctor visit workflows, sample distribution, and daily activity reporting.</p>
+                    <div class="tech-tags">
+                        <span>ASP.NET</span><span>C#</span><span>SQL Server</span><span>Calendar API</span><span>Field Ops</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Regulatory System CIC Holdings -->
+            <div class="activity-card reveal-elem" style="transition-delay: 0.15s;">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Regulatory System" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">Compliance & Security</span>
+                    <div class="activity-company"><i class="fas fa-shield-alt"></i> CIC Holdings PLC</div>
+                    <h3>Regulatory Management System</h3>
+                    <p class="activity-desc">A web-based regulatory management platform built with ASP.NET and C#. Engineered role-based access control (RBAC) dashboards for role-specific information access, real-time JavaScript toast notification alerts, user management functionality, and system usability enhancements.</p>
+                    <div class="tech-tags">
+                        <span>ASP.NET</span><span>C#</span><span>RBAC</span><span>Toast Alerts</span><span>SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Smart-Retail-POS -->
+            <div class="activity-card reveal-elem" style="transition-delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Retail POS Application" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">Full-Stack Application</span>
+                    <div class="activity-company"><i class="fas fa-cash-register"></i> Retail & Inventory</div>
+                    <h3>Smart-Retail-POS</h3>
+                    <p class="activity-desc">Modern web-based retail management solution engineered with React to optimize checkout workflows. Features an intuitive UI styled with Tailwind CSS for rapid transaction processing, communicating seamlessly with a Node.js/Express REST backend for live inventory updates, authentication, and sales reporting.</p>
+                    <div class="tech-tags">
+                        <span>React</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span><span>REST APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Warehouse Distance Tracker -->
+            <div class="activity-card reveal-elem" style="transition-delay: 0.45s;">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Warehouse Tracker" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">Logistics & Mapping</span>
+                    <div class="activity-company"><i class="fas fa-truck-loading"></i> Logistics Optimization</div>
+                    <h3>Warehouse Distance Tracker</h3>
+                    <p class="activity-desc">A logistics optimization system calculating precise distances between customer locations and Rocell warehouses. Integrates Google Maps API and Mapbox with React, Node.js, and MySQL to deliver real-time metrics assisting in accurate delivery routing and cost estimation.</p>
+                    <div class="tech-tags">
+                        <span>React</span><span>Node.js</span><span>MySQL</span><span>Google Maps API</span><span>Mapbox</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: GameVault (E-Commerce Game Store) -->
+            <div class="activity-card reveal-elem" style="transition-delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="GameVault E-Commerce" class="activity-img">
+                <div class="activity-overlay">
+                    <span class="activity-badge">E-Commerce Platform</span>
+                    <div class="activity-company"><i class="fas fa-gamepad"></i> Digital Distribution</div>
+                    <h3>GameVault (Online Game Store)</h3>
+                    <p class="activity-desc">Interactive digital game distribution platform built with Java and Hibernate. Complete end-to-end development, from drafting detailed software specifications to implementing robust backend architecture and integrating the PayHere payment gateway for secure transactions.</p>
+                    <div class="tech-tags">
+                        <span>Java</span><span>Hibernate</span><span>PayHere Gateway</span><span>MySQL</span><span>MVC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: LocalLink (Sona PHP Hackathon) -->
+            <div class="activity-card reveal-elem" style="transition-delay: 0.75s;">
                 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="PHP Hackathon" class="activity-img">
                 <div class="activity-overlay">
-                    <span class="activity-badge">🏆 1st Place</span>
-                    <h3>Sona PHP Hackathon (2023)</h3>
-                    <p class="activity-desc">Distance Service Management System (LocalLink). Developed an award-winning web solution showcasing strong problem-solving and web development capabilities.</p>
+                    <span class="activity-badge">🏆 1st Place Winner</span>
+                    <div class="activity-company"><i class="fas fa-trophy"></i> Sona PHP Web Hackathon (2023)</div>
+                    <h3>LocalLink — Service Management</h3>
+                    <p class="activity-desc">First-place award-winning distance service management platform created at Java Institute Sona PHP Web Hackathon. Engineered to connect customers with proximate service providers, featuring automated dispatching, distance calculation, and robust backend handling.</p>
                     <div class="tech-tags">
-                        <span>PHP</span><span>Web Dev</span><span>Problem Solving</span>
+                        <span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Web Dev</span><span>1st Place</span>
                     </div>
                 </div>
             </div>
 
-            <div class="activity-card reveal-elem" style="transition-delay: 0.2s;">
+            <!-- Project 7: Spider Wick (IoT Hackathon) -->
+            <div class="activity-card reveal-elem" style="transition-delay: 0.9s;">
                 <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IOT Hackathon" class="activity-img">
                 <div class="activity-overlay">
-                    <span class="activity-badge">🏆 2nd Place</span>
-                    <h3>IOT Hackathon (2025)</h3>
-                    <p class="activity-desc">SpiderWick (SpiderRobot). Engineered an impressive IoT robotics project, blending hardware networking with software programming.</p>
+                    <span class="activity-badge">🏆 2nd Place Winner</span>
+                    <div class="activity-company"><i class="fas fa-robot"></i> IoT Hackathon (2025)</div>
+                    <h3>Spider Wick — Spider Robot</h3>
+                    <p class="activity-desc">Second-place award-winning biomimetic spider robot engineered at Java Institute IoT Hackathon. Blends embedded microcontrollers, sensor networking, wireless telemetry, and real-time multi-legged robotics coordination.</p>
                     <div class="tech-tags">
-                        <span>IoT</span><span>Robotics</span><span>Hardware</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="activity-card reveal-elem" style="transition-delay: 0.4s;">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Game Store" class="activity-img">
-                <div class="activity-overlay">
-                    <span class="activity-badge">Featured Project</span>
-                        <h3>Online Game Store</h3>
-                    
-                    <p class="activity-desc">A comprehensive e-commerce platform dedicated to digital game distribution.</p>
-                    <div class="tech-tags">
-                        <span>Software Engineering</span><span>Full-stack</span><span>Java</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="activity-card reveal-elem" style="transition-delay: 0.6s;">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Employee Database" class="activity-img">
-                <div class="activity-overlay">
-                    <span class="activity-badge">Enterprise App</span>
-                    <h3>Employee Database CRUD</h3>
-                    <p class="activity-desc">A robust application built for managing employee records efficiently with a clean MVC architecture.</p>
-                    <div class="tech-tags">
-                        <span>Java</span><span>Jersey MVC</span><span>Hibernate</span>
+                        <span>IoT</span><span>Robotics</span><span>Microcontrollers</span><span>Hardware</span><span>2nd Place</span>
                     </div>
                 </div>
             </div>
@@ -155,66 +371,214 @@
         </div>
     </section>
 
+    <section id="education">
+        <h2 class="section-title reveal-elem">Educational Journey</h2>
+        <p class="section-subtitle reveal-elem">Academic foundations in Software Engineering and Information Technology from premier institutions.</p>
+        
+        <div class="timeline reveal-elem">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item reveal-elem" style="transition-delay: 0.1s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>BSc (Hons) in Software Engineering</h3>
+                    <h4>Birmingham City University (affiliated with Java Institute for Advanced Technology)</h4>
+                    <p class="timeline-date">Expect Graduation 2027</p>
+                    <p>Majors: Software Engineering. Focused on advanced software engineering, full-stack enterprise development, software design patterns, and system architecture simulating real-world industry requirements.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item reveal-elem" style="transition-delay: 0.25s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Information Technology (BIT)</h3>
+                    <h4>University of Moratuwa</h4>
+                    <p class="timeline-date">Expect Graduation 2028</p>
+                    <p>Comprehensive computing curriculum covering theoretical computer science, database systems, networking infrastructure, algorithms, and applied software technologies.</p>
+                </div>
+            </div>
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item reveal-elem" style="transition-delay: 0.4s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>GCE Advanced Level</h3>
+                    <h4>Central College Piliyandala</h4>
+                    <p class="timeline-date">2023 - 2024</p>
+                    <p><strong>Technology Stream</strong><br>Completed with results: 1C - 3S. Built a solid foundation in analytical problem-solving, engineering technology, and computing science.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2 class="section-title reveal-elem">Leadership & Soft Skills</h2>
+        <div class="leadership-grid">
+            <div class="leadership-card reveal-elem">
+                <div class="icon-wrapper"><i class="fas fa-users"></i></div>
+                <h3>Team Leadership</h3>
+                <p>Guided tight-knit teams during hackathons and university projects to deliver award-winning solutions on strict deadlines.</p>
+            </div>
+            <div class="leadership-card reveal-elem" style="transition-delay: 0.2s;">
+                <div class="icon-wrapper"><i class="fas fa-lightbulb"></i></div>
+                <h3>Problem Solving</h3>
+                <p>Adapted quickly to unexpected technical challenges, acting as the core troubleshooter for both software bugs and hardware faults.</p>
+            </div>
+            <div class="leadership-card reveal-elem" style="transition-delay: 0.4s;">
+                <div class="icon-wrapper"><i class="fas fa-comments"></i></div>
+                <h3>Effective Communication</h3>
+                <p>Bridged the gap between technical details and non-technical stakeholders, ensuring project requirements were clearly interpreted.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
         <h2 class="section-title reveal-elem">Technical Expertise</h2>
+        <p class="section-subtitle reveal-elem">Comprehensive toolkit spanning full-stack frameworks, languages, database architectures, and IT infrastructure.</p>
         
         <div class="skills-grid">
             
-            <!-- Software Category -->
+            <!-- Programming Languages -->
             <div class="skill-category reveal-elem">
                 <div class="category-header">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Software Engineering</h3>
+                    <i class="fas fa-code"></i>
+                    <h3>Programming Languages</h3>
                 </div>
                 <div class="skills-container-detailed">
-                    <div class="skill-btn-detailed">Java</div>
                     <div class="skill-btn-detailed">JavaScript</div>
+                    <div class="skill-btn-detailed">TypeScript</div>
+                    <div class="skill-btn-detailed">C#</div>
+                    <div class="skill-btn-detailed">Java</div>
+                    <div class="skill-btn-detailed">PHP</div>
                     <div class="skill-btn-detailed">Python</div>
-                    <div class="skill-btn-detailed">Hibernate</div>
-                    <div class="skill-btn-detailed">Jersey MVC</div>
+                    <div class="skill-btn-detailed">C</div>
+                    <div class="skill-btn-detailed">Dart</div>
                 </div>
             </div>
 
-            <!-- Hardware & Network Category -->
-            <div class="skill-category reveal-elem" style="transition-delay: 0.2s;">
+            <!-- Frameworks & Web -->
+            <div class="skill-category reveal-elem" style="transition-delay: 0.15s;">
+                <div class="category-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Frameworks & Web</h3>
+                </div>
+                <div class="skills-container-detailed">
+                    <div class="skill-btn-detailed">ASP.NET Core</div>
+                    <div class="skill-btn-detailed">React</div>
+                    <div class="skill-btn-detailed">Tailwind CSS</div>
+                    <div class="skill-btn-detailed">Node.js</div>
+                    <div class="skill-btn-detailed">Bootstrap</div>
+                    <div class="skill-btn-detailed">Three.js</div>
+                    <div class="skill-btn-detailed">Electron.js</div>
+                    <div class="skill-btn-detailed">Hibernate (ORM)</div>
+                    <div class="skill-btn-detailed">ASP.NET Web Forms</div>
+                </div>
+            </div>
+
+            <!-- Databases & Storage -->
+            <div class="skill-category reveal-elem" style="transition-delay: 0.3s;">
+                <div class="category-header">
+                    <i class="fas fa-database"></i>
+                    <h3>Databases & Cloud Data</h3>
+                </div>
+                <div class="skills-container-detailed">
+                    <div class="skill-btn-detailed">SQL Server</div>
+                    <div class="skill-btn-detailed">MySQL</div>
+                    <div class="skill-btn-detailed">MongoDB</div>
+                    <div class="skill-btn-detailed">Firebase</div>
+                    <div class="skill-btn-detailed">Entity Framework</div>
+                    <div class="skill-btn-detailed">Data Migration</div>
+                </div>
+            </div>
+
+            <!-- IT & Infrastructure -->
+            <div class="skill-category reveal-elem" style="transition-delay: 0.45s;">
                 <div class="category-header">
                     <i class="fas fa-network-wired"></i>
                     <h3>IT & Infrastructure</h3>
                 </div>
                 <div class="skills-container-detailed">
-                    <div class="skill-btn-detailed">Networking</div>
-                    <div class="skill-btn-detailed">Computer Repairing</div>
-                    <div class="skill-btn-detailed">IT Technician Support</div>
+                    <div class="skill-btn-detailed">Network Configuration</div>
+                    <div class="skill-btn-detailed">Routers & Switches</div>
                     <div class="skill-btn-detailed">Hardware Diagnostics</div>
+                    <div class="skill-btn-detailed">Workstation Setup</div>
+                    <div class="skill-btn-detailed">OS Deployments</div>
+                    <div class="skill-btn-detailed">Backup & Recovery</div>
                 </div>
             </div>
 
-            <!-- Advanced Category -->
-            <div class="skill-category reveal-elem" style="transition-delay: 0.4s;">
-                <div class="category-header">
-                    <i class="fas fa-brain"></i>
-                    <h3>Data & Automation</h3>
-                </div>
-                <div class="skills-container-detailed">
-                    <div class="skill-btn-detailed">AI Automation</div>
-                    <div class="skill-btn-detailed">Data Analysis</div>
-                    <div class="skill-btn-detailed">IoT Robotics</div>
-                </div>
-            </div>
-
-            <!-- Cloud Category -->
+            <!-- Tools, DevOps & IDEs -->
             <div class="skill-category reveal-elem" style="transition-delay: 0.6s;">
                 <div class="category-header">
                     <i class="fab fa-aws"></i>
-                    <h3>Cloud & DevOps</h3>
+                    <h3>DevOps, Cloud & Tools</h3>
                 </div>
                 <div class="skills-container-detailed">
-                    <div class="skill-btn-detailed">AWS Core Services</div>
-                    <div class="skill-btn-detailed">Cloud Deployment</div>
-                    <div class="skill-btn-detailed">Server Management</div>
+                    <div class="skill-btn-detailed">AWS</div>
+                    <div class="skill-btn-detailed">Google Cloud Console</div>
+                    <div class="skill-btn-detailed">Git / GitHub</div>
+                    <div class="skill-btn-detailed">CI/CD Pipelines</div>
+                    <div class="skill-btn-detailed">ClickUp</div>
+                    <div class="skill-btn-detailed">Visual Studio</div>
+                    <div class="skill-btn-detailed">VS Code</div>
+                    <div class="skill-btn-detailed">IntelliJ</div>
                 </div>
             </div>
             
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title reveal-elem">Competition Gallery</h2>
+        <p class="gallery-subtitle reveal-elem" style="transition-delay: 0.1s;">Moments and memories capturing my journey through hackathons, technical events, and team collaborations.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tech Event">
+                <div class="gallery-overlay">
+                    <span>Sona Hackathon</span>
+                </div>
+            </div>
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Discussion">
+                <div class="gallery-overlay">
+                    <span>Team Collaboration</span>
+                </div>
+            </div>
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IOT Hackathon Setup">
+                <div class="gallery-overlay">
+                    <span>IOT Setup & Robotics</span>
+                </div>
+            </div>
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.5s;">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Award Ceremony">
+                <div class="gallery-overlay">
+                    <span>Awards & Recognition</span>
+                </div>
+            </div>
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.6s;">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pitching Ideas">
+                <div class="gallery-overlay">
+                    <span>Pitching Ideas</span>
+                </div>
+            </div>
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.7s;">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Gathering">
+                <div class="gallery-overlay">
+                    <span>Community Tech Gathering</span>
+                </div>
+            </div>
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.8s;">
+                <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/576915594_838105175822993_511323951511892058_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd6889&_nc_eui2=AeEVvjMuif_eRjjNzSpy0_DKXWuKkwRKiZlda4qTBEqJmQjdk_OzpkTPfx7y19c48aXFP0yje2xF89xqbUd3OSF_&_nc_ohc=8wz7b6kFso8Q7kNvwFizdFB&_nc_oc=AdrwVQzqvBfN9bedKtxc7P00r_3TVogSZ3ZqqdsBfx4WSB3iay7uRJCd2P4kpbuErm8&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=fhH7aQsgFaXT8IrDQ8RWIw&_nc_ss=8&oh=00_AfxfytG2q2e5XKf2A4wCT33gSMrp2ILlX4y3gtxCxiLKfQ&oe=69C1AC03" alt="Recent Activity">
+                <div class="gallery-overlay">
+                    <span>Recent Activity</span>
+                </div>
+            </div>
+            <div class="gallery-item reveal-elem" style="transition-delay: 0.9s;">
+                <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/480572850_625326400434206_2581214135288447136_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeGeWjWEJNo3VaOqTBFFnHayQJGafZDh7XZAkZp9kOHtdvz3SgI1Wx02mZvIQSdHki0EguOHmyW_L49YlddY5bXq&_nc_ohc=_MvHdMDnKDUQ7kNvwFUTgQI&_nc_oc=AdrQWZYvuRogz5UlplWUtnEaLCK64oLO3thqVlQyLkBHvW9oHAjomrGXSEhjwZWVUnA&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=DwbTa_oYYEe51ozDcWq0Jw&_nc_ss=8&oh=00_AfzFbzalE-3sYe8Octj6HT4x4W-o9jDfYnwZqEmoKmLOsw&oe=69C1BDBF" alt="Industrial Visit - Royal Ceremic">
+                <div class="gallery-overlay">
+                    <span>Industrial Visit<br><small style="font-size: 14px; color: var(--text-gray); font-weight: 400;">Royal Ceremic (pvt).ltd</small></span>
+                </div>
+            </div>
         </div>
     </section>
 
