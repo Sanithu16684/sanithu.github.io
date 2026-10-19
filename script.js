@@ -97,7 +97,7 @@ scene.add(dirLight2);
 
 // 2. ABOUT: Hardware floating objects 
 const aboutObjects = new THREE.Group();
-const hwMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff88, wireframe: true, transparent: true, opacity: 0.25 });
+const hwMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff88, wireframe: true, transparent: true, opacity: 0.35 });
 const hwGeometries = [
     new THREE.BoxGeometry(2, 2, 0.2), 
     new THREE.CylinderGeometry(0.2, 0.2, 0.5), 
@@ -329,7 +329,7 @@ function animateCursorTrail() {
 animateCursorTrail();
 
 // Cursor Interaction on Hover Elements
-const hoverElements = document.querySelectorAll('a, button, .activity-card, .experience-card, .timeline-item, .btn-primary, .btn-secondary, .social-links a, .skill-btn-detailed, input, textarea, .menu-toggle');
+const hoverElements = document.querySelectorAll('a, button, .activity-card, .experience-card, .timeline-item, .btn-primary, .btn-secondary, .social-links a, .skill-btn-detailed, input, textarea, .menu-toggle, .about-image-wrapper');
 hoverElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
         if(customCursorTrail) customCursorTrail.classList.add('hovered');
@@ -340,6 +340,7 @@ hoverElements.forEach(el => {
         if(customCursor) customCursor.classList.remove('hovered');
     });
 });
+
 
 // TYPING EFFECT
 const words = ["Software Engineer", "Full-Stack Developer", "ASP.NET Specialist", "IT Infrastructure Expert"];

@@ -416,27 +416,49 @@ section {
 
 .about-image-wrapper {
     position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
 .glow-border-img {
     position: absolute;
-    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    width: 330px;
+    height: 330px;
+    top: -5px;
+    left: -5px;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     border-radius: 50%;
     z-index: -1;
     filter: blur(15px);
-    opacity: 0.6;
+    opacity: 0.65;
     animation: pulse 4s ease-in-out infinite;
 }
-@keyframes pulse { 0% { transform: scale(0.95); opacity: 0.5; } 50% { transform: scale(1.05); opacity: 0.8; } 100% { transform: scale(0.95); opacity: 0.5; } }
+
+@keyframes pulse { 
+    0% { transform: scale(0.95); opacity: 0.5; } 
+    50% { transform: scale(1.05); opacity: 0.8; } 
+    100% { transform: scale(0.95); opacity: 0.5; } 
+}
 
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px) scale(1.02); }
     100% { transform: translateY(0px); }
 }
-.profile-img { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 4px solid #111; animation: float 6s ease-in-out infinite; }
+
+.profile-img { 
+    width: 320px; 
+    height: 320px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid var(--primary); 
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+    animation: float 6s ease-in-out infinite; 
+}
 
 .about-subtitle {
     font-size: 24px;
@@ -1233,4 +1255,10 @@ section {
     .experience-card { padding: 25px 20px; }
     .experience-role { font-size: 20px; }
     .experience-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+@media (max-width: 480px) {
+    .about-image-wrapper { width: 240px; height: 240px; }
+    .glow-border-img { width: 250px; height: 250px; }
+    .profile-img { width: 240px; height: 240px; }
 }
